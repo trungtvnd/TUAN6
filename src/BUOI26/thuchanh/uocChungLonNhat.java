@@ -11,12 +11,16 @@ public class uocChungLonNhat {
         System.out.print("Nhập số thứ hai:");
         num2 = scanner.nextInt();
         scanner.close();
-        while (num1 != num2) {
-            if(num1 > num2)
-                num1 = num1 - num2;
-            else
-                num2 = num2 - num1;
+        if(num1 == 0 || num2 == 0){
+            System.out.println("Không có so nao dung");
+        }else {
+            while (num1 != num2) {
+                if (num1 > num2)
+                    num1 = num1 - num2;
+                else
+                    num2 = num2 - num1;
+            }
+            System.out.printf("Ước chung lớn nhất là: %d", num2);
         }
-        System.out.printf("Ước chung lớn nhất là: %d", num2);
     }
 }
