@@ -1,90 +1,127 @@
 package BUOI25;
-
 import java.util.Scanner;
-
 public class readNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int number;
-        System.out.println("Enter the number: ");
-        number = scanner.nextInt();
+        System.out.println("Nhập vào 1 số từ 1 - 999 bất kỳ: ");
+        int number = scanner.nextInt();
+
+        int hangDonVi = number % 10;
+        int hangChuc = (number % 100) / 10;
+        int hangTram = number / 100;
+
+        if (number < 0 || number > 999) {
+            System.out.println("Nhập sai giá trị, không đọc được");
+        } else if (number == 0) {
+            System.out.println("zero");
+        } else if (number < 20) {
+            String word = donVi(number);
+            System.out.println(word);
+        } else {
+            String word;
+            if (hangTram == 0) {
+                word = hangChuc(hangChuc) + " " + donVi(hangDonVi);
+            } else if (hangChuc == 1) {
+                word = donVi(hangTram) + " hundred " + donVi(number % 100);
+            } else {
+                word = donVi(hangTram) + " hundred " + hangChuc(hangChuc) + " " + donVi(hangDonVi);
+            }
+            System.out.println(word);
+        }
+    }
+
+    public static String hangChuc(int number) {
+        String hangChucWord = "";
         switch (number) {
-            case 0:
-                System.out.printf("%d : Zero", number);
-                break;
-            case 1:
-                System.out.printf("%d : One", number);
-                break;
             case 2:
-                System.out.printf("%d : Two", number);
+                hangChucWord = "twenty";
                 break;
             case 3:
-                System.out.printf("%d : Three", number);
+                hangChucWord = "thirty";
                 break;
             case 4:
-                System.out.printf("%d : Four", number);
+                hangChucWord = "fourty";
                 break;
             case 5:
-                System.out.printf("%d : Five", number);
+                hangChucWord = "fifty";
                 break;
             case 6:
-                System.out.printf("%d : Six", number);
+                hangChucWord = "sixty";
                 break;
             case 7:
-                System.out.printf("%d : Seven", number);
+                hangChucWord = "seventy";
                 break;
             case 8:
-                System.out.printf("%d : Eight", number);
+                hangChucWord = "eighty";
                 break;
             case 9:
-                System.out.printf("%d : Nine", number);
+                hangChucWord = "ninety";
                 break;
-//            default:
-//                System.out.println("Out of Ability");
         }
-        if (number >= 10 && number < 20) {
-            int number1 = number - 10;
-            switch (number1) {
-                case 0:
-                    System.out.printf("%d : Ten", number);
-                    break;
-                case 1:
-                    System.out.printf("%d : Eleven", number);
-                    break;
-                case 2:
-                    System.out.printf("%d : Twelve", number);
-                    break;
-                case 3:
-                    System.out.printf("%d : Thirteen", number);
-                    break;
-                case 4:
-                    System.out.printf("%d : Fourteen", number);
-                    break;
-                case 5:
-                    System.out.printf("%d : Fifteen", number);
-                    break;
-                case 6:
-                    System.out.printf("%d : Sixteen", number);
-                    break;
-                case 7:
-                    System.out.printf("%d : Seventeen", number);
-                    break;
-                case 8:
-                    System.out.printf("%d : Eighteen", number);
-                    break;
-                case 9:
-                    System.out.printf("%d : Nineteen", number);
-                    break;
-//                default:
-//                    System.out.println("Out of Ability");
-//                    break;
-            }
+        return hangChucWord;
+    }
+
+    public static String donVi(int number) {
+        String donViWord = "";
+        switch (number) {
+            case 1:
+                donViWord = "one";
+                break;
+            case 2:
+                donViWord = "two";
+                break;
+            case 3:
+                donViWord = "three";
+                break;
+            case 4:
+                donViWord = "four";
+                break;
+            case 5:
+                donViWord = "five";
+                break;
+            case 6:
+                donViWord = "six";
+                break;
+            case 7:
+                donViWord = "seven";
+                break;
+            case 8:
+                donViWord = "eight";
+                break;
+            case 9:
+                donViWord = "nine";
+                break;
+            case 10:
+                donViWord = "ten";
+                break;
+            case 11:
+                donViWord = "eleven";
+                break;
+            case 12:
+                donViWord = "twelve";
+                break;
+            case 13:
+                donViWord = "thirteen";
+                break;
+            case 14:
+                donViWord = "fourteen";
+                break;
+            case 15:
+                donViWord = "fifteen";
+                break;
+            case 16:
+                donViWord = "sixteen";
+                break;
+            case 17:
+                donViWord = "seventeen";
+                break;
+            case 18:
+                donViWord = "eighteen";
+                break;
+            case 19:
+                donViWord = "nineteen";
+                break;
         }
-        if (number >= 20 && number < 100) {
-            double down, modulo, numChange;
-            numChange = number;
-            down = Math.round(numChange / 10);
-            modulo = numChange % 10;
-        }
+        return donViWord;
     }
 }
