@@ -5,13 +5,15 @@ import java.util.Scanner;
 public class menu {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int choice;
+
         while (true) {
+            int choice;
             System.out.println("Menu");
             System.out.println("1. Drawing Triagle");
             System.out.println("2. Drawing Rectangle");
             System.out.println("3. Drawing Square");
             System.out.println("0. Exit");
+            System.out.print("Would you like to choose something");
             choice = input.nextInt();
             switch (choice) {
                 case 1:
