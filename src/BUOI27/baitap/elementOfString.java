@@ -19,7 +19,6 @@ public class elementOfString {
                 count++;
             }
         }
-
         System.out.println("Số lần xuất hiện của ký tự " + kyTu +
                 " trong chuỗi " + chuoi + " = " + count);
     }
