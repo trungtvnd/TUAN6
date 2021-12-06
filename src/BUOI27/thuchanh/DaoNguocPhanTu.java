@@ -22,8 +22,8 @@ public class DaoNguocPhanTu {
             i++;
         }
         System.out.printf("%-20s%s", "element in array: ", "");
-        for (int j = 0; j < array.length; j++) {
-            System.out.print(array[j] + "\t");
+        for (int element: array) {
+            System.out.print(element+ "\t");
         }
         for (int j = 0; j < array.length/2; j++) {
             int temp = array[j];
@@ -31,8 +31,8 @@ public class DaoNguocPhanTu {
             array[size -1 - j] = temp;
         }
         System.out.printf("%-20s%s", "reverse array: ", "");
-        for (int j = 0; j < array.length; j++) {
-            System.out.print(array[j] + "\t" );
+        for (int element: array) {
+            System.out.print(element + "\t" );
         }
 
 
