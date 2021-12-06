@@ -6,20 +6,17 @@ public class twentysoNguyenTo {
         int N = 2;
         boolean flag = true;
         while (count <= 20){
-            for (int i = 2; i < Math.round(Math.sqrt(N));) {
+            for (int i = 2; i <= Math.sqrt(N);i ++) {
                 if(N % i == 0){
                     flag = false;
                     break;
                 }
-                i++;
             }if(flag){
                 count++;
                 System.out.println(N);
             }
             flag = true;
             N++;
-
         }
-
     }
 }

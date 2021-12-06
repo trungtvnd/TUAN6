@@ -3,7 +3,7 @@ package BUOI27.baitap;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class xoaPhanTu {
+public class deleteElement {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8};
