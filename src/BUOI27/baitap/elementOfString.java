@@ -8,7 +8,6 @@ public class elementOfString {
         char kyTu = 'a';
         int count = 0;
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Nhập vào chuỗi bất kỳ: ");
         string = scanner.nextLine();
         for (int i = 0; i < string.length(); i++) {
@@ -19,6 +18,4 @@ public class elementOfString {
         System.out.println("Số lần xuất hiện của ký tự " + kyTu +
                 " trong chuỗi " + string + " = " + count);
     }
-
-
 }
