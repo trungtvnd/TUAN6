@@ -5,22 +5,28 @@ import java.util.Scanner;
 
 public class addElement {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         int[] arr = {1, 2, 3, 4, 5, 6};
         int n = arr.length;
-        int index = 3;
+
+        int number;
         System.out.println("Original Array: " + Arrays.toString(arr));
         int[] newArr = new int[n + 1];
         int j = 0;
+        System.out.println("Nhập vào giá trị muốn thêm vào");
+        number = input.nextInt();
+
+        System.out.println("Nhập vào vi trí muốn thêm phần tử");
+        int index = input.nextInt();
 
         for (int i = 0; i < newArr.length; i++) {
             if (i == index) {
-                newArr[i] = 7;
+                newArr[i] = number;
             } else {
                 newArr[i] = arr[j];
                 j++;
             }
         }
-        newArr[index] = 7;
 
         System.out.println("Array after adding value: " + Arrays.toString(newArr));
     }
