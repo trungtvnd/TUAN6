@@ -3,7 +3,7 @@ package BUOI27.reviewbaitap;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class addElement {
+public class addElementArray2D {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Nhập kích thước của ma trận");
