@@ -22,16 +22,16 @@ public class maxArray2Chieu {
         double max = maxArray(array);
         System.out.println("max là: " + max);
     }
-    static double maxArray(double[][] array){
+
+    static double maxArray(double[][] array) {
         double max = array[0][0];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                if(array[i][j] > max){
+                if (array[i][j] > max) {
                     max = array[i][j];
                 }
             }
         }
-
         return max;
     }
 }

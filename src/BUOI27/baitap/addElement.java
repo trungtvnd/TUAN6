@@ -28,7 +28,7 @@ public class addElement {
             }
         }
 
-        System.out.println("Array after adding value: " + Arrays.toString(newArr));
+        System.out.println("NewArray: " + Arrays.toString(newArr));
     }
 
 }
