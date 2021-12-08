@@ -7,6 +7,8 @@ public class QuadraticEquation {
     private final double b;
     private final double c;
 
+
+
     public QuadraticEquation(double a, double b, double c) {
         this.a = a;
         this.b = b;

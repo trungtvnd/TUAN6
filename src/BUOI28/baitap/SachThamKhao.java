@@ -11,7 +11,7 @@ public class SachThamKhao {
     int amount;
     boolean status;
 
-    SachThamKhao(){
+    SachThamKhao() {
 
     }
 
@@ -96,7 +96,7 @@ public class SachThamKhao {
     }
 }
 
-class QuanLySach{
+class QuanLySach {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("codebook:");
@@ -109,13 +109,12 @@ class QuanLySach{
         System.out.println("producer: ");
         String producer = input.nextLine();
         System.out.println("price: ");
-        double price  = input.nextDouble();
+        double price = input.nextDouble();
         System.out.println("Amount: ");
         int amount = input.nextInt();
         boolean status = true;
         SachThamKhao sachThamKhao = new SachThamKhao(codeBook, nameBook, language, producer, price, amount);
         System.out.println(sachThamKhao.toString());
         System.out.println("Tổng giá trị sách: " + sachThamKhao.total());
-
     }
 }
