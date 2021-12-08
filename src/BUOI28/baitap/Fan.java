@@ -27,11 +27,26 @@ public class Fan {
     public void setRadius(double radius){
         this.radius = radius;
     }
+    public void showSpeed(){
+        int speed = this.speed;
+        switch (speed){
+            case 1:
+                System.out.println("Tốc độ quạt là Slow");
+                break;
+            case 2:
+                System.out.println("Tốc độ quạt là Medium");
+                break;
+            case 3:
+                System.out.println("Tốc độ quạt là Fast");
+                break;
+        }
+
+    }
     public String toString(){
         if(on){
-            return this.speed + this.color + "Fan is on";
+            return this.speed + " " + this.color + " " + "Fan is on";
         }else {
-            return this.speed +this.color + " Fan is off";
+            return this.speed + " " + this.color + " " + "Fan is off";
         }
     }
 
@@ -48,7 +63,9 @@ class FanShow{
         fan1.setRadius(5);
         fan1.setSpeed(2);
         fan1.turnOff();
-        System.out.println(fan.toString());
-        System.out.println(fan1.toString());
+        System.out.println(fan);
+        fan.showSpeed();
+        System.out.println(fan1);
+        fan1.showSpeed();
    }
 }
