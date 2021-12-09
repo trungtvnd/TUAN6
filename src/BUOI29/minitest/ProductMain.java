@@ -1,5 +1,6 @@
 package BUOI29.minitest;
 
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -33,9 +34,9 @@ public class ProductMain {
 public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     Product[] products = new Product[3];
-    Product product1 = new Product("abc123","Máy móc", 10000, "Mới", "USD" );
-    Product product2 = new Product("abc12345","Máy Tiện", 15000, "Cũ", "USD" );
-    Product product3 = new Product("abc123345","Máy Hàn", 10000, "Mới", "USD" );
+    Product product1 = new Product("abc123","Bike", 10000, "Mới", "USD" );
+    Product product2 = new Product("abc12345","Bicycle", 15000, "Cũ", "USD" );
+    Product product3 = new Product("abc123345","Toy", 10000, "Mới", "USD" );
 
     products[0] = product1;
     products[1] = product2;
@@ -43,6 +44,7 @@ public static void main(String[] args) {
     for (Product product:products) {
         System.out.println(product);
     }
+    System.out.println(Arrays.toString(products));
 
     System.out.println("Tổng giá là: " + Product.total);
 }
