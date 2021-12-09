@@ -42,8 +42,8 @@ public static void main(String[] args) {
     products[2] = product3;
     for (Product product:products) {
         System.out.println(product);
-
     }
+    System.out.println(Product.total);
 }
 
 
