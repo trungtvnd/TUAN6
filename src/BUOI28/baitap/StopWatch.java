@@ -3,68 +3,44 @@ package BUOI28.baitap;
 import java.time.LocalTime;
 
 public class StopWatch {
-    private LocalTime startTime, endTime;
+    double startTime;
+    double endTime;
 
     public StopWatch() {
-        startTime = LocalTime.now();
     }
 
-    public StopWatch(LocalTime startTime, LocalTime endTime) {
-        this.startTime = startTime;
-        this.endTime = endTime;
+    public void getStartTime() {
+        startTime = System.currentTimeMillis();
     }
 
-    public LocalTime getStartTime() {
-        return startTime;
+    public void getEndTime() {
+        endTime = System.currentTimeMillis();
     }
 
-    public LocalTime getEndTime() {
-        return endTime;
-    }
-
-    public void start() {
-        startTime = LocalTime.now();
-    }
-
-    public void stop() {
-        endTime = LocalTime.now();
-    }
-
-    public int getElapsedTime() {
-        return ((endTime.getHour() - startTime.getHour()) * 3600 + (endTime.getMinute() - startTime.getMinute()) * 60 + (endTime.getSecond() - startTime.getSecond()) * 1000);
+    public double getElapsedTime() {
+        return endTime - startTime;
 
     }
 }
+class StopWatchMain{
+    public static void main(String[] args) {
+                StopWatch stopWatch = new StopWatch();
+        long[] arr = new long[100000];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = Math.round(Math.random() * 1000);
+        }
 
-class OOPStopWatch {
-
-
-    public static int[] selectionSort(int... a) {
-        for (int i = 0; i < a.length - 1; i++) {
-            for (int j = i + 1; j < a.length; j++) {
-                if (a[j] < a[i]) {
-                    int tempt = a[i];
-                    a[i] = a[j];
-                    a[j] = tempt;
+        stopWatch.getStartTime();
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    long temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
                 }
             }
         }
-        return a;
+        stopWatch.getEndTime();
+        System.out.println(stopWatch.getElapsedTime());
     }
-
-    public static void main(String[] args) {
-        int[] a = new int[100000];
-        for (int i = 0; i < 100000; i++) {
-            a[i] = (int) (Math.random() * 1000);
-        }
-        LocalTime start = LocalTime.now();
-        a = selectionSort(a);
-        LocalTime end = LocalTime.now();
-        StopWatch sw = new StopWatch(start, end);
-        System.out.println("Time: " + sw.getElapsedTime());
-        for (int x : a) {
-            System.out.println(x);
-        }
     }
-
-}
