@@ -13,5 +13,11 @@ public class CircleMain {
         System.out.println(cylinder1);
         Cylinder cylinder2 = new Cylinder(5);
         System.out.println(cylinder2);
+        System.out.println(cylinder1.getRadiusCylinder());
+        cylinder1.setColor("yellow");
+
+        cylinder1.setRadius(15);
+        System.out.println(cylinder1);
+
     }
 }

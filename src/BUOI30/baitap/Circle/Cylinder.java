@@ -7,6 +7,17 @@ public class Cylinder extends Circle {
     public Cylinder(double height){
         this.height = height;
     }
+
+    @Override
+    public double getRadius() {
+        return super.getRadius();
+    }
+
+    @Override
+    public void setRadius(double radius) {
+        super.setRadius(radius);
+    }
+
     public Cylinder(double height, double radius, String color){
         super(radius,color);
         this.height = height;
@@ -18,17 +29,12 @@ public class Cylinder extends Circle {
     public double getRadiusCylinder(){
         return getRadius();
     }
-    public void setSide(double side) {
-        setRadius(side);
-    }
 
     public void setHeight(double height) {
         this.height = height;
     }
 
-    public void setRadius(double radius){
-        setSide(radius);
-    }
+
     public double getTotalAreaCylinder(){
         return getArea()* 2 + 2*this.height*getRadiusCylinder()*Math.PI;
     }
