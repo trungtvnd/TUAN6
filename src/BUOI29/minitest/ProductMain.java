@@ -43,7 +43,8 @@ public static void main(String[] args) {
     for (Product product:products) {
         System.out.println(product);
     }
-    System.out.println(Product.total);
+
+    System.out.println("Tổng giá là: " + Product.total);
 }
 
 
