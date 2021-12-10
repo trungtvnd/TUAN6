@@ -6,6 +6,8 @@ public class Shape {
 
     public Shape() {
     }
+    public Shape(String color) {
+    }
     public Shape(String color, boolean filled){
         this.color = color;
         this.filled = filled;
