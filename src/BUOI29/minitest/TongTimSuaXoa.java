@@ -1,6 +1,7 @@
 package BUOI29.minitest;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class TongTimSuaXoa {
     public static void main(String[] args) {
@@ -36,56 +37,58 @@ public class TongTimSuaXoa {
 //        if(findName.equals(products[i].getName())){
 //            System.out.println(products[i]);
 //        }
-//
 //    }
+
+
+
+
+
+//        sưa sản phẩm    System.out.println("Bạn muốn sửa hang hóa nào");
+////        System.out.println("Nhập mã hàng hóa muốn sửa");
+////        int choice = input.nextInt();
+////        for (int i = 0; i < products.length; i++) {
+////                if(choice == i){
+////                    System.out.println("Nhập thông tin muốn sửa");
+////                    System.out.println("price: ");
+////                    double price = input.nextDouble();
+////                    input.nextLine();
+////                    System.out.println("Name: ");
+////                    String name = input.next();
+////                    System.out.println("type: ");
+////                    String type = input.nextLine();
+////                    input.nextLine();
+////                    System.out.println("Currency: ");
+////                    String currency = input.next();
+////                    products[i].setPrice(price);
+////                    products[i].setName(name);
+////                    products[i].setType(type);
+////                    products[i].setCurrentcy(currency);
+////                    System.out.println(products[i]);
+////                    System.out.println(Product.total);
+////                }
+////
+////        }
 //
-
-
-
-
-//        sưa sản phẩm
-        System.out.println("Bạn muốn sửa hang hóa nào");
-        System.out.println("Nhập mã hàng hóa muốn sửa");
-        int choice = input.nextInt();
-        for (int i = 0; i < products.length; i++) {
-                if(choice == i){
-                    System.out.println("Nhập thông tin muốn sửa");
-                    System.out.println("price: ");
-                    double price = input.nextDouble();
-                    input.nextLine();
-                    System.out.println("Name: ");
-                    String name = input.next();
-                    System.out.println("type: ");
-                    String type = input.nextLine();
-                    input.nextLine();
-                    System.out.println("Currency: ");
-                    String currency = input.next();
-                    products[i].setPrice(price);
-                    products[i].setName(name);
-                    products[i].setType(type);
-                    products[i].setCurrentcy(currency);
-                    System.out.println(products[i]);
-                }
-        }
 
 
 //        Xóa
-//        System.out.println("Nhập mã sản phẩm muốn xóa");
-//        int choice = input.nextInt();
-//        for (int i = 0; i < products.length; i++) {
-//            if (choice == i){
-//                Product [] productList = new Product[products.length -1];
-//                for (int j = 0; j < choice; j++) {
-//                    productList[j] = products[j];
-//                }
-//                for (int j = choice +1; j < products.length; j++) {
-//                    productList[j -1] = products[j];
-//                }
-//                System.out.println(Arrays.toString(productList));
-//
-//            }
-//
-//        }
+        System.out.println("Nhập mã sản phẩm muốn xóa");
+        int choice = input.nextInt();
+        for (int i = 0; i < products.length; i++) {
+            if (choice == i){
+                System.out.println("Tổng giá là: " + (Product.total - products[i].getPrice()));
+                Product [] productList = new Product[products.length -1];
+                for (int j = 0; j < choice; j++) {
+                    productList[j] = products[j];
+                }
+                for (int j = choice +1; j < products.length; j++) {
+                    productList[j -1] = products[j];
+                }
+                System.out.println(Arrays.toString(productList));
+
+            }
+
+        }
     }
 
 }
