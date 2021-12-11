@@ -31,13 +31,13 @@ public class TongTimSuaXoa {
 
 
 //tìm sản phẩm theo ten và in ra thong tin san pham do
-//    System.out.println("Nhập tên sản phẩm muốn tìm");
-//    String findName = input.next();
-//    for (int i = 0; i < products.length; i++) {
-//        if(findName.equals(products[i].getName())){
-//            System.out.println(products[i]);
-//        }
-//    }
+    System.out.println("Nhập tên sản phẩm muốn tìm");
+    String findName = input.next();
+    for (int i = 0; i < products.length; i++) {
+        if(findName.equals(products[i].getName())){
+            System.out.println(products[i]);
+        }
+    }
 
 
 
