@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class ManagerBook {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         Book[] bookList = new Book[13];
         ScienceBook book1 = new ScienceBook("Java Basic", 120000, 5, "24/03/2021", "IT");
         ScienceBook book2 = new ScienceBook("Python Basic", 50000, 10, "15/10/2021", "IT");
@@ -67,11 +66,30 @@ public class ManagerBook {
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
+                    System.out.println("1. Create array of Books");
                     creatBookList();
                     break;
                 case 2:
-                    creatScienceBookList();
+                    System.out.println("Bạn muốn tạo sách thuộc thể loại nào Science hay Novel?");
+                    System.out.println("1. Create array of three type Science  books");
+                    System.out.println("2. Create array Novel  books");
+                    System.out.println("0. Exit");
+                    int choice1 =scanner.nextInt();
+                    switch (choice1){
+                        case 1:
+                            System.out.println("1. Create array of three type Science  books");
+                            creatScienceBookList();
+                            break;
+                        case 2:
+                            System.out.println("2. Create array Novel  books");
+                            creatNovelBookList();
+                            break;
+                        case 0:
+                            System.exit(0);
+
+                    }
                     break;
+
                 case 3://Từ case 3 làm theo mảng đã tạo sẵn bên trên để k phải nhập lại sách theo từng case//
                     //Trả luôn về từng loại sách khoa học và sách tiểu thuyết//
                     System.out.println("3. Display all of Books");
@@ -85,18 +103,23 @@ public class ManagerBook {
                     }
                     break;
                 case 4:
+                    System.out.println("4. Total sum of Price ");
                     System.out.println(Book.total + "VND");
                     break;
                 case 5:
+                    System.out.println("5. Find the most expensive Book");
                     maxPrice(bookList);
                     break;
                 case 6:
+                    System.out.println("6. Find the most Cheapest Book");
                     minPrice(bookList);
                     break;
                 case 7:
+                    System.out.println("7. Search Book follow type From Library");
                     findType(scienceBookList, scanner);
                     break;
                 case 8:
+                    System.out.println("8. Search Book follow Author From Library");
                     findAuthor(novelBookList, scanner);
                     break;
 
@@ -118,11 +141,14 @@ public class ManagerBook {
         System.out.println("Điền tác giả bạn muốn tìm");
         scanner.nextLine();
         String author = scanner.nextLine();
+        boolean flag = false;
         for (NovelBook novelBook: novelBookList) {
             if(author.equals(novelBook.getAuthor())){
-                System.out.println("8. Search Book follow Author From Library");
                 System.out.println(novelBook);
+                flag = true;
             }
+        }if(!flag){
+            System.out.println("Not found");
         }
     }
 
@@ -130,21 +156,22 @@ public class ManagerBook {
         System.out.println("Bạn muốn tìm thể loại sách nào: ");
         System.out.println("Điền thể loại bạn muốn tìm");
         String type = scanner.next();
+        boolean flag = false;
         for (ScienceBook sc : scienceBookList) {
             if (type.equals(sc.getType())) {
-                System.out.println("7. Search Book follow type From Library");
                 System.out.println(sc);
+                flag = true;
             }
+        }if(!flag){
+            System.out.println("Not Found");
         }
     }
 
     private static void minPrice(Book[] bookList) {
         double min = bookList[0].getPrice();
         for (Book book : bookList) {
-            if (min < book.getPrice()) {
+            if (min > book.getPrice()) {
                 min = book.getPrice();
-                System.out.println("6. Find the most Cheapest Book");
-                System.out.println("Sách có giá tiền nhỏ nhất là: ");
                 System.out.println(book);
             }
         }
@@ -155,8 +182,6 @@ public class ManagerBook {
         for (Book book : bookList) {
             if (max < book.getPrice()) {
                 max = book.getPrice();
-                System.out.println("5. Find the most expensive Book");
-                System.out.println("Sách có giá tiền lớn nhất là: ");
                 System.out.println(book);
             }
         }
@@ -176,16 +201,15 @@ public class ManagerBook {
             priceStart = priceEnd;
             priceEnd = temp;
         }
+        System.out.println("10. Show books in range price");
         boolean flag = false;
         for (Book book: bookList) {
             if (book.getPrice() >= priceStart && book.getPrice() <= priceEnd){
-                System.out.println("10. Show books in range price");
                 System.out.println(book);
                 flag = true;
             }
         }
         if (!flag){
-            System.out.println("10. Show books in range price");
             System.out.println("Not found");
         }
     }
@@ -247,7 +271,37 @@ public class ManagerBook {
         String day = input.next();
         System.out.println("Nhập thể loại");
         String type = input.next();
-        Book science = new ScienceBook(name, price, amount, day, type);
-        return science;
+        return  new ScienceBook(name, price, amount, day, type);
+    }
+
+    public static void creatNovelBookList() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nhập số lượng sách muốn nhập");
+        int size1 = input.nextInt();
+        Book[] books1 = new Book[size1];
+        for (int i = 0; i < books1.length; i++) {
+            System.out.println("Nhập sách thứ " + (i + 1));
+            books1[i] = bookListNovel(input);
+        }
+        for (Book b : books1) {
+            System.out.println(b);
+        }
+    }
+
+    public static Book bookListNovel(Scanner input) {
+        System.out.println("Nhập Tên: ");
+        String name = input.next();
+        input.nextLine();
+        System.out.println("Nhập Giá: ");
+        double price = input.nextInt();
+        input.nextLine();
+        System.out.println("Nhập Khối lượng sách: ");
+        int amount = input.nextInt();
+        input.nextLine();
+        System.out.println("Nhập ngày nhập sách: ");
+        String day = input.next();
+        System.out.println("Nhập tác giả");
+        String author = input.next();
+        return  new NovelBook(name, price, amount, day, author);
     }
 }
