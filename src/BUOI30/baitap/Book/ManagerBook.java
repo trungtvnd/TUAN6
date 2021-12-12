@@ -52,7 +52,7 @@ public class ManagerBook {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Welcome to my Library");
             System.out.println("1. Create array of Books");
-            System.out.println("2. Create array of three type books");
+            System.out.println("2. Create array of 2 difference kind of books");
             System.out.println("3. Display all of Books");
             System.out.println("4. Total sum of Price ");
             System.out.println("5. Find the most expensive Book");
@@ -70,18 +70,18 @@ public class ManagerBook {
                     creatBookList();
                     break;
                 case 2:
-                    System.out.println("Bạn muốn tạo sách thuộc thể loại nào Science hay Novel?");
+                    System.out.println("Which choose do you want Science or Novel?");
                     System.out.println("1. Create array of three type Science  books");
                     System.out.println("2. Create array Novel  books");
                     System.out.println("0. Exit");
                     int choice1 =scanner.nextInt();
                     switch (choice1){
                         case 1:
-                            System.out.println("1. Create array of three type Science  books");
+                            System.out.println("1. Create array of  Science  books");
                             creatScienceBookList();
                             break;
                         case 2:
-                            System.out.println("2. Create array Novel  books");
+                            System.out.println("2. Create array of Novel  books");
                             creatNovelBookList();
                             break;
                         case 0:
